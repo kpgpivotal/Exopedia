@@ -1,5 +1,5 @@
-#ifndef UTILS_H
-#define UTILS_H
+#ifndef INCLUDE_UTILS_H
+#define INCLUDE_UTILS_H
 
 #include <iostream>
 #include <string>
@@ -13,9 +13,13 @@
 using namespace std;
 using namespace std::literals;
 
+#define  DEBUG_MODE  true
+
+
 const int INPUT_RETRY_COUNT = 10;
 void print_line();
 void message(string message);
+void debug(string message);
 void error_message(string message);
 int get_input_int(string prompt);
 void clear_console();

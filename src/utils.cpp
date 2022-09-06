@@ -180,4 +180,9 @@ bool  get_y_n_confirmation(string prompt) {
     return false;
 }
     
-
+void debug(string debug_message) {
+    if (  DEBUG_MODE) {
+        message("\n>>>>>\t" + debug_message);
+    }
+    
+}

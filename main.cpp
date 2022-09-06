@@ -5,11 +5,14 @@
 
 #include <iostream>
 
-#include "utils.hpp"
+#include "exopediaui.hpp"
 
 
 using namespace std;
 
 int main (int argc, char** argv){
-    message("Hello, Exopedia world..");
+    ExopediaUI theApp;
+
+    theApp.run();
+    
 }

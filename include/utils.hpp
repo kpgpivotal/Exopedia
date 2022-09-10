@@ -31,6 +31,10 @@ bool isChar(char c);
 bool isDigit(const char c);
 long get_input_long(string prompt);
 bool  get_y_n_confirmation(string prompt="Are you sure ( Y/N )?");
+int read_num_range(int low, int high, bool cancel_choice_allowed = true);
+int show_read_menu_choice(const vector<string> &choices, string header = "Menu");
+
+
 
 #endif
 

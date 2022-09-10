@@ -10,6 +10,9 @@ enum class UserType {
 	CusomterUser = 0, AdminUser = 1
 };
 
+ostream &operator << ( ostream& os, UserType user_type );
+
+
 class User {
 protected:
 	string user_id;

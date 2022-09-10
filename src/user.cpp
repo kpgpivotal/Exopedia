@@ -23,16 +23,13 @@ void User::read_data(const string &user_id) {
 
     string str;
 
-    cout << "Enter password: ";
-    cin >> str;
+    str = get_input_string("Enter password");
     set_password(str);
 
-    cout << "Enter name: ";
-    cin >> str;
+    str = get_input_string("Enter name");
     set_name(str);
 
-    cout << "Enter email: ";
-    cin >> str;
+    str = get_input_string("Enter email");
     set_email(str);
 }
 
@@ -77,7 +74,20 @@ void User::set_type(UserType type) {
     this->type = type;
 }
 
+ostream &operator << ( ostream& os, UserType user_type )
+{
+	switch(user_type)
+	{
+		case UserType::CusomterUser:
+		os << "CusomterUser";
+		break;
+		case UserType::AdminUser:
+		os << "AdminUser";
+		break;
+	}
+	return os;
 
+}
 
 Admin::Admin() {
 

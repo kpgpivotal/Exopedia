@@ -41,14 +41,10 @@ long get_input_long(string prompt){
     return long_val;
 }
 
-void clear_console() {
-    system("clear");
-}
-
 
 string capitalize_first_letter(string text) {
 
-	for (int x = 0; x < text.length(); x++)
+	for (string::size_type x = 0; x < text.length(); x++)
 	{
 		if (x == 0)
 		{
@@ -70,7 +66,7 @@ string get_input_string(string prompt){
     cout <<  prompt << " : " ;
     std::getline(std::cin, input);
     
-    return capitalize_first_letter(input);
+    return input;
 }
 
 string get_input_email(string prompt){
@@ -107,37 +103,37 @@ bool is_valid_email(string email)
     }
     // Variable to store position
     // of At and Dot
-    int At = -1, Dot = -1;
+    string::size_type at = -1, dot = -1;
   
     // Traverse over the email id
     // string to find position of
     // Dot and At
-    for (int i = 0;
+    for (string::size_type i = 0;
          i < email.length(); i++) {
   
         // If the character is '@'
         if (email[i] == '@') {
   
-            At = i;
+            at = i;
         }
   
         // If character is '.'
         else if (email[i] == '.') {
   
-            Dot = i;
+            dot = i;
         }
     }
   
     // If At or Dot is not present
-    if (At == -1 || Dot == -1)
+    if (at == -1 || dot == -1)
         return 0;
   
     // If Dot is present before At
-    if (At > Dot)
+    if (at > dot)
         return 0;
   
     // If Dot is present at the end
-    return !(Dot >= (email.length() - 1));
+    return !(dot >= (email.length() - 1));
 }
 
 
@@ -160,8 +156,7 @@ bool isDigit(const char c)
 bool  get_y_n_confirmation(string prompt) {
     string input_str;
     char input;
-    bool valid_input{};
-
+ 
     input_str = get_input_string(prompt); 
     if (0 == input_str.size()){
         return false;
@@ -185,4 +180,45 @@ void debug(string debug_message) {
         message("\n>>>>>\t" + debug_message);
     }
     
+}
+
+
+int read_num_range(int low, int high, bool cancel_choice_allowed ) {	
+    int value{};
+
+	if (!cancel_choice_allowed)
+		cout << "\nEnter number in range " << low << " - " << high << ": ";
+	else
+		cout << "\nEnter -1 to cancel or number in range " << low << " - " << high << ": ";
+
+	value = get_input_int("");
+
+	if (cancel_choice_allowed && value == -1)
+		return value;
+
+	if (low <= value && value <= high)
+		return value;
+
+	cout << "ERROR: invalid number...Try again\n";
+	return read_num_range(low, high);
+}
+
+int show_read_menu_choice(const vector<string> &choices, string header ) {	
+	int choice{};
+
+    cout << "\n\t" << header << endl;
+	for (int ch = 0; ch < (int) choices.size(); ++ch) {
+		cout << "\t" << ch + 1 << ": " << choices[ch] << endl;
+	}
+    choice = read_num_range(1, choices.size());
+	return choice;
+}
+
+void clear_console() {
+#ifdef WINDOWS
+    std::system("cls");
+#else
+    // Assume POSIX
+    std::system ("clear");
+#endif
 }

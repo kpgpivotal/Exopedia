@@ -17,6 +17,7 @@ class ExopediaUI {
 
     private:
         UserManager* m_p_user_manager;
+        int load_database();
 
 
 };

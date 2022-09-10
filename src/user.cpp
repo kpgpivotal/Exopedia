@@ -91,4 +91,10 @@ ostream &operator << ( ostream& os, UserType user_type )
 
 Admin::Admin() {
 
-};
+		set_type(UserType::AdminUser);
+
+}
+
+
+
+	

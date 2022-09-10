@@ -5,11 +5,10 @@
 #include <map>
 #include "utils.hpp"
 #include "user.hpp"
+#include "customer.hpp"
 
 using namespace std;
 
-
-class Customer: public User {};
 
 class UserManager {
 	protected:

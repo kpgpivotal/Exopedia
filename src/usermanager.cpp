@@ -23,11 +23,11 @@ void UserManager::free_n_clear_data() {
 void UserManager::load_database(){
     message("UserManager::load_database()");
     free_n_clear_data();
-/*
+
     // Some "Dummy Data" for simplicity
     Admin* admin_user = new Admin();
-    admin_user->set_user_id("kishore");
-    admin_user->set_password("111");
+    admin_user->set_user_id("kg");
+    admin_user->set_password("123");
     admin_user->set_email("kishore@gmail.com");
     admin_user->set_name("Kishore George");
     m_userid_userobject_map[admin_user->get_user_id()] = admin_user;
@@ -37,6 +37,7 @@ void UserManager::load_database(){
     customrUser->set_password("123");
     customrUser->set_email("nash@gmail.com");
     customrUser->set_name("Nash George");
+    m_userid_userobject_map[customrUser->get_user_id()] = customrUser;
 
 /*
     DebitCard* debitCard = new DebitCard();

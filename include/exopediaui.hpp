@@ -4,6 +4,8 @@
 #include <iostream>
 #include "utils.hpp"
 #include "usermanager.hpp"
+#include "customermanager.hpp"
+#include "customerview.hpp"
 
 using namespace std;
 
@@ -16,7 +18,9 @@ class ExopediaUI {
         void run();
 
     private:
-        UserManager* m_p_user_manager;
+        UserManager* m_p_user_manager = nullptr;
+        ExpediaManager*  m_p_expedia_manager = nullptr;
+        CustomerManager* m_p_customer_manager = nullptr;
         int load_database();
 
 

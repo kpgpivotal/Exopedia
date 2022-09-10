@@ -46,7 +46,7 @@ protected:
 public:
 	Admin(const Admin&) = delete;
 	void operator=(const Admin&) = delete;
-	Admin() ;
+	Admin();
 };
 
 

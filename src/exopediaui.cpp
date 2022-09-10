@@ -40,7 +40,6 @@ void ExopediaUI::run(){
 		while (true) {
 			return_value = m_p_user_manager->user_access_management();	
 
-
             utype = m_p_user_manager->get_current_user()->get_type();
             cout << "\n Type : " << utype << endl;
 			if ( utype == UserType::CusomterUser) {

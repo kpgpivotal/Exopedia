@@ -28,6 +28,8 @@ class UserManager {
 		void do_exit();
 		User* get_current_user() const ;
 		void free_n_clear_data();
+		void list_users();
+
 
 };
 

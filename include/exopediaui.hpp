@@ -6,6 +6,7 @@
 #include "usermanager.hpp"
 #include "customermanager.hpp"
 #include "customerview.hpp"
+#include "adminview.hpp"
 
 using namespace std;
 

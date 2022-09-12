@@ -111,7 +111,7 @@ void CustomerView::read_flight_request(FlightRequest &request) const{
 		Flight &flight = flights[flight_choice - 1];
 
 		FlightReservation reservation(request, flight);
-		current_itinerary.AddReservation(reservation);
+		current_itinerary.add_reservation(reservation);
 */
        
 	}
@@ -131,7 +131,7 @@ void CustomerView::read_flight_request(FlightRequest &request) const{
 		HotelRoom &room = rooms[hotel_choice - 1];
 
 		HotelReservation reservation(request, room);
-		current_itinerary.AddReservation(reservation);
+		current_itinerary.add_reservation(reservation);
 */        
 	}
 

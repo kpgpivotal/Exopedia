@@ -49,7 +49,10 @@ void ExopediaUI::run(){
              
 			}
 			else {
-                message("Admin user view");
+                AdminView admview{m_p_user_manager->get_current_user(),m_p_user_manager};
+
+                admview.display();
+   
             }
 				
 

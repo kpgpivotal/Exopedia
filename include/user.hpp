@@ -44,9 +44,10 @@ public:
 class Admin: public User {
 protected:
 public:
-	Admin(const Admin&) = delete;
+	Admin(const Admin*) = delete;
 	void operator=(const Admin&) = delete;
 	Admin();
+	
 };
 
 

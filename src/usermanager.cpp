@@ -65,7 +65,6 @@ bool UserManager::user_access_management(){
     bool return_value{};
     
     choice = show_read_menu_choice( { "Login", "Customer Sign Up", "Exit"});
-    //cout << "\n@@@@@@@@@@@\t Choice : " << choice << endl;
 
     if (choice == 3) {
         do_exit();
@@ -113,7 +112,6 @@ bool UserManager::do_login() {
             continue;
         }
         m_current_user = user_exist;
-        //message(m_current_user->get_user_id() + " soccessfully logged in.");
         break;
     }
 
@@ -146,4 +144,13 @@ void UserManager::do_exit(){
     clear_console();
     message("Thank you for choosing Exopedia!");
     exit(EXIT_SUCCESS);
+}
+
+void UserManager::list_users(){
+   map<string, User*> ::iterator it;
+   message("\nList of Users");
+   for(it=m_userid_userobject_map.begin(); it!=m_userid_userobject_map.end(); ++it){
+      cout << it->first << " => " << it->second->to_string() << '\n';
+   }
+   
 }

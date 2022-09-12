@@ -5,6 +5,7 @@
 #include "utils.hpp"
 #include "customermanager.hpp"
 #include "customer.hpp"
+#include "reservation.hpp"
 
 using namespace std;
 
@@ -19,7 +20,7 @@ class CustomerView {
     private:
         CustomerManager &customer_manager;
         const Customer& customer;
-        //ItineraryReservation current_itinerary;
+        ItineraryReservation current_itinerary;
         void read_flight_request(FlightRequest &request) const;
         void read_hotel_request(HotelRequest &request) const;
         int choose_flight(const vector<Flight> &flights) const;
@@ -34,12 +35,6 @@ class CustomerView {
         void view_profile() const;
         void make_itinerary();
         void list_itineraries() const;
-
-
-        
-
-
-
 };
 
 
